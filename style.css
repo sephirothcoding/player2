@@ -8,17 +8,12 @@
   border-style: solid;
   border-color: #fddb45;
   border-width: 1px;
-}
-
-
- body {
-    width: 100%;
-    margin: 100%;
-    margin: 0;
-    padding: 0;
-    background: #757575;  
+  background: #757575;  
     font-family: "Griffy", sans-serif;
 }
+
+
+
 
 .hat {
     position: absolute;
