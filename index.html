@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
 <style>
-  .container{
+.container {
   position: relative;
   display: inline-block;
   margin: 170;
@@ -12,403 +12,414 @@
   border-style: solid;
   border-color: #fddb45;
   border-width: 1px;
-  background: #757575;  
-    font-family: "Griffy", sans-serif;
+  background: #757575;
+  font-family: "Griffy", sans-serif;
 }
 
-
-
-
 .hat {
-    position: absolute;
-    margin-top: -80px;
-    margin-left: -50px;
+  position: absolute;
+  margin-top: -80px;
+  margin-left: -50px;
 }
 
 .hat_down {
-    position: absolute;
-    transform: rotate(10deg);
+  position: absolute;
+  transform: rotate(10deg);
 }
 
 .hat_part_viol {
-    position: absolute;
-    transform: rotate(10deg);
-    margin-left: 67px;
-    margin-top: -35px;
-    height: 0;
-    width: 40px; 
-    border-bottom: 21px solid darkviolet; 
-    border-left: 11.5px solid transparent; 
-    border-right: 4px solid transparent;
+  position: absolute;
+  transform: rotate(10deg);
+  margin-left: 67px;
+  margin-top: -35px;
+  height: 0;
+  width: 40px;
+  border-bottom: 21px solid darkviolet;
+  border-left: 11.5px solid transparent;
+  border-right: 4px solid transparent;
 }
 
 .hat_outer {
-    width: 35px;
-    height: 25px;
-    background: yellow;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    box-shadow: 1px 1px 10px yellow, -1px -1px 10px yellow;
+  width: 35px;
+  height: 25px;
+  background: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: 1px 1px 10px yellow, -1px -1px 10px yellow;
 }
 
 .hat_inner {
-    width: 20px;
-    height: 10px;
-    background: darkviolet;
+  width: 20px;
+  height: 10px;
+  background: darkviolet;
 }
 
 .body {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #f9fff3;
-    width: 150px;
-    height: 220px;
-    margin-top: -40px;
-    margin-left: 30px;
-    border-radius: 75px 75px 0 0;
-    box-shadow: 0 0 20px white;
-    animation: ease-in-out up-down 2s infinite alternate;     
-    box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f9fff3;
+  width: 150px;
+  height: 220px;
+  margin-top: -40px;
+  margin-left: 30px;
+  border-radius: 75px 75px 0 0;
+  box-shadow: 0 0 20px white;
+  animation: ease-in-out up-down 2s infinite alternate;
+  box-sizing: border-box;
 }
 
-.hand1, .hand2 {
-    height: 50px;
-    position: absolute;
-    display: inline-block ;
-    padding: 15px;
-    color: #f9fff3;
-    background: #f9fff3;
-    margin-top: 50px;
-    box-shadow: 0 0 20px white;
-    box-sizing: border-box;
+.hand1,
+.hand2 {
+  height: 50px;
+  position: absolute;
+  display: inline-block;
+  padding: 15px;
+  color: #f9fff3;
+  background: #f9fff3;
+  margin-top: 50px;
+  box-shadow: 0 0 20px white;
+  box-sizing: border-box;
 }
 
 .hand1 {
-    width: 120px;
-    transform: rotate(45deg);
-    margin-left: -80px;
-    border-radius: 20px 0 0 30px;
-    animation: ease-in-out up-down3_1 2s infinite alternate;
+  width: 120px;
+  transform: rotate(45deg);
+  margin-left: -80px;
+  border-radius: 20px 0 0 30px;
+  animation: ease-in-out up-down3_1 2s infinite alternate;
 }
 
 .hand2 {
-    width: 120px;
-    transform: rotate(-55deg);
-    margin-left: 100px;
-    border-radius: 0 20px 30px 0;
-    animation: ease-in-out up-down3 2s infinite alternate;
+  width: 120px;
+  transform: rotate(-55deg);
+  margin-left: 100px;
+  border-radius: 0 20px 30px 0;
+  animation: ease-in-out up-down3 2s infinite alternate;
 }
 
-.part1, .part2, .part3 {
-    background: #f9fff3;
-    width: 50px;
-    height: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 90px;
-    margin-left: 30px;
-    border-radius: 0 0 25px 25px;
-    box-shadow: 0 0 20px white;
-    animation: ease-in-out up-down2 2s infinite alternate;
-    box-sizing: border-box;
+.part1,
+.part2,
+.part3 {
+  background: #f9fff3;
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 90px;
+  margin-left: 30px;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 0 20px white;
+  animation: ease-in-out up-down2 2s infinite alternate;
+  box-sizing: border-box;
 }
 
 .part1 {
-    margin-left: -20px;
+  margin-left: -20px;
 }
 
 .part3 {
-    margin-left: 80px;
+  margin-left: 80px;
 }
 
 .eye1 {
-    position: absolute;
-    background: #4d4d4d;
-    width: 25px;
-    height: 45px;
-    margin-left: 35px;
-    margin-top: 30px;
-    border-radius: 10px 20px 20px 10px;
-    transform: rotate(10deg);
-    animation: blink ease-in 1.3s infinite alternate;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px #4d4d4d;
+  position: absolute;
+  background: #4d4d4d;
+  width: 25px;
+  height: 45px;
+  margin-left: 35px;
+  margin-top: 30px;
+  border-radius: 10px 20px 20px 10px;
+  transform: rotate(10deg);
+  animation: blink ease-in 1.3s infinite alternate;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #4d4d4d;
 }
 
 .e2 {
-    margin-left: 85px;
-    transform: rotate(-10deg);
-    border-radius: 20px 10px 10px 20px;
-    box-shadow: 0 0 10px #4d4d4d;
+  margin-left: 85px;
+  transform: rotate(-10deg);
+  border-radius: 20px 10px 10px 20px;
+  box-shadow: 0 0 10px #4d4d4d;
 }
 
 .mouth1 {
-    position: absolute;
-    background: #4d4d4d;
-    width: 35px;
-    height: 40px;
-    margin-left: 55px;
-    margin-top: 90px;
-    border-radius: 15px 15px 20px 20px;
-    animation: mouth ease-in-out 2s infinite alternate;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px #4d4d4d;
+  position: absolute;
+  background: #4d4d4d;
+  width: 35px;
+  height: 40px;
+  margin-left: 55px;
+  margin-top: 90px;
+  border-radius: 15px 15px 20px 20px;
+  animation: mouth ease-in-out 2s infinite alternate;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #4d4d4d;
 }
 
 .pumpkin {
-    height: 100px;
-    width: 130px;
-    background: #ff7309;
-    border: 0.3em solid #a14907;
-    border-radius: 70%/110%;
-    position: absolute;
-    box-shadow: 0 0 20px #a14907, 0 0 30px -4px red;
-    z-index: 999;
-    margin-left: -105px;
-    margin-top: 50px;
-    animation: pump 1.9s ease-in-out infinite alternate;
-    box-sizing: border-box;
+  height: 100px;
+  width: 130px;
+  background: #ff7309;
+  border: 0.3em solid #a14907;
+  border-radius: 70%/110%;
+  position: absolute;
+  box-shadow: 0 0 20px #a14907, 0 0 30px -4px red;
+  z-index: 999;
+  margin-left: -105px;
+  margin-top: 50px;
+  animation: pump 1.9s ease-in-out infinite alternate;
+  box-sizing: border-box;
 }
 
 .pumpkin .curves {
-    height: 50px;
-    width: 55px;
-    border-radius: 50%;
-    border-top: 5px solid #a14907;  
-    margin-top: -22px;
-    margin-left: 32px;
+  height: 50px;
+  width: 55px;
+  border-radius: 50%;
+  border-top: 5px solid #a14907;
+  margin-top: -22px;
+  margin-left: 32px;
 }
 
 .pumpkin .eye {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 0.1em solid transparent;
-    top: 2em;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 0.1em solid transparent;
+  top: 2em;
 }
 
 .pumpkin .eye.right {
-    margin-left: 70px;
-    margin-top: -10px;
-    transform: rotate(40deg);
-    border-bottom: 1.5em solid transparent;
-    border-left: 1.5em solid #ffbe00;
-    box-shadow: 0 0 50px #ffbe20;
+  margin-left: 70px;
+  margin-top: -10px;
+  transform: rotate(40deg);
+  border-bottom: 1.5em solid transparent;
+  border-left: 1.5em solid #ffbe00;
+  box-shadow: 0 0 50px #ffbe20;
 }
 
 .pumpkin .eye.left {
-    margin-left: 23px;
-    margin-top: -10px;
-    transform: rotate(-40deg);
-    border-bottom: 1.5em solid transparent;
-    border-right: 1.5em solid #ffbe00;
-    box-shadow: 0 0 50px #ffbe20;
+  margin-left: 23px;
+  margin-top: -10px;
+  transform: rotate(-40deg);
+  border-bottom: 1.5em solid transparent;
+  border-right: 1.5em solid #ffbe00;
+  box-shadow: 0 0 50px #ffbe20;
 }
 
 .pumpkin .mouth {
-    width: 3em;
-    height: 1.5em;
-    position: absolute;
-    bottom: 1em;
-    border-bottom: 1em solid #ffbe00;
-    box-shadow: 0 0 50px #ffbe20;
+  width: 3em;
+  height: 1.5em;
+  position: absolute;
+  bottom: 1em;
+  border-bottom: 1em solid #ffbe00;
+  box-shadow: 0 0 50px #ffbe20;
 }
 
 .pumpkin .mouth.right {
-    left: 3.6em;
-    border-radius: 0 0 100% 0;
+  left: 3.6em;
+  border-radius: 0 0 100% 0;
 }
 
 .pumpkin .mouth.left {
-    left: 0.8em;
-    border-radius: 0 0 0 100%;
+  left: 0.8em;
+  border-radius: 0 0 0 100%;
 }
 
 .btn {
-    background-color: #303030;
-    display: inline-block;
-    border-radius: 4px;
-    color: white;
-    border: 0;
-    outline-color: red;
-    padding: 10px 15px;
-    position: absolute;
-    box-shadow: 0 0 15px black;
-    font-size: 14px;
-    font-family: "Griffy", cursive;
+  background-color: #303030;
+  display: inline-block;
+  border-radius: 4px;
+  color: white;
+  border: 0;
+  outline-color: red;
+  padding: 10px 15px;
+  position: absolute;
+  box-shadow: 0 0 15px black;
+  font-size: 14px;
+  font-family: "Griffy", cursive;
 }
 
 #radio_btn {
-    bottom: 10px;
-    left: 10px;
+  bottom: 10px;
+  left: 10px;
 }
 
 #optimize_btn {
-    bottom: 10px;
-    left: 125px;
+  bottom: 10px;
+  left: 125px;
 }
 
 .warning {
-    font-size: 30px;
-    text-align: center;
-    font-family: "Griffy", cursive;
-    margin-top: 20px;
-    font-weight: 900;
-    display: block;
-    color: orange;
-    text-shadow: 0 0 8px orange;
-    letter-spacing: 2px;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Griffy", cursive;
+  margin-top: 20px;
+  font-weight: 900;
+  display: block;
+  color: orange;
+  text-shadow: 0 0 8px orange;
+  letter-spacing: 2px;
 }
-
-
-
 
 /* body anim */
 @keyframes up-down {
-    to {margin-top: 0;}
+  to {
+    margin-top: 0;
+  }
 }
 
-/*parts anim*/
+/* parts anim */
 @keyframes up-down2 {
-    to {margin-top: 130px;}
+  to {
+    margin-top: 130px;
+  }
 }
 
-/*hands anim*/
+/* hands anim */
 @keyframes up-down3 {
-    to {margin-top: 55px; transform: rotate(-55deg);}
+  to {
+    margin-top: 55px;
+    transform: rotate(-55deg);
+  }
 }
 @keyframes up-down3_1 {
-    to {margin-top: 40px; transform: rotate(50deg);}
+  to {
+    margin-top: 40px;
+    transform: rotate(50deg);
+  }
 }
 
-/*eye anim*/
+/* eye anim */
 @keyframes blink {
-    to{margin-top: 50px;height: 0.2px;}
+  to {
+    margin-top: 50px;
+    height: 0.2px;
+  }
 }
 
-/*mouth anim*/
+/* mouth anim */
 @keyframes mouth {
-    to{width: 30px; height: 50px;}
+  to {
+    width: 30px;
+    height: 50px;
+  }
 }
 
-/*pumpkin anim*/
+/* pumpkin anim */
 @keyframes pump {
-    from{transform: rotate(-7deg);}
-    to{transform: rotate(7deg); margin-left: -115px;}
+  from {
+    transform: rotate(-7deg);
+  }
+  to {
+    transform: rotate(7deg);
+    margin-left: -115px;
+  }
 }
 
 </style>
   
-  <meta charset="UTF-8">
-  <title>CodePen - CSS Ghost animation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Griffy'><link rel="stylesheet" href="./style.css">
-
+<meta charset="UTF-8">
+<title>CodePen - CSS Ghost animation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Griffy'><link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
-      <div class="container">
-<div class="body">
-    
-            <svg class="hat" width="200" height="300">
-        <polygon class="hat" points="90 90, 170 0, 170 100" 
-   style="fill: #202020; stroke:black;" />
-       <rect class="hat_down" x="93" y ="55" width="110px" stroke="black" height="25px" fill="#202020"></rect>
-            </svg>
-        <div class="hat_part_viol">
-            <div class="hat_outer">
-                <div class="hat_inner"></div>
-            </div>
-        </div>
-            
-        <div class="eye1 e1"></div>
-        <div class="eye1 e2"></div>
-        <div class="mouth1"></div>
-        
-        <div class="hand1"></div>
-        <div class="hand2"></div>
-            
-        <div class="pumpkin" id="pump">
-            <div class="curves"></div>
-            <div class="surface"></div>
-            <div class="stem"></div>
-            <div class="eye left"></div>
-            <div class="eye right"></div>
-            <div class="mouth left"></div>
-            <div class="mouth right"></div>
-            <div class="teeth"></div>
-        </div>
-        
-        </div>
-            <div class="part1 part"></div>
-            <div class="part2 part"></div>
-            <div class="part3 part"></div>
+<div class="container">
+  <div class="body">
+    <svg class="hat" width="200" height="300">
+      <polygon class="hat" points="90 90, 170 0, 170 100" 
+        style="fill: #202020; stroke:black;" />
+      <rect class="hat_down" x="93" y="55" width="110px" stroke="black" height="25px" fill="#202020"></rect>
+    </svg>
+    <div class="hat_part_viol">
+      <div class="hat_outer">
+        <div class="hat_inner"></div>
+      </div>
+    </div>
 
-        <button id="radio_btn" class="btn">Play Music</button>
-        <button id="optimize_btn" class="btn">Optimize Ghost</button>
-        <div class="warning">Happy Halloween! 👿</div>
+    <div class="eye1 e1"></div>
+    <div class="eye1 e2"></div>
+    <div class="mouth1"></div>
+
+    <div class="hand1"></div>
+    <div class="hand2"></div>
+
+    <div class="pumpkin" id="pump">
+      <div class="curves"></div>
+      <div class="surface"></div>
+      <div class="stem"></div>
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="mouth left"></div>
+      <div class="mouth right"></div>
+      <div class="teeth"></div>
+    </div>
+
+  </div>
+  <div class="part1 part"></div>
+  <div class="part2 part"></div>
+  <div class="part3 part"></div>
+
+  <button id="radio_btn" class="btn">Play Music</button>
+  <button id="optimize_btn" class="btn">Optimize Ghost</button>
+  <div class="warning">Happy Halloween! 👿</div>
 </div>
 
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
-
-  <script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="./script.js"></script>
+<script>
   window.onload = () => {
-  let check = 2;
-  let music = document.createElement("audio");
-  music.setAttribute("src", "http://neuro-network.tk/scary.mp3");
-  music.setAttribute("id", "radio-player");
-  music.setAttribute("loop", "true");
+    let check = 2;
+    let music = document.createElement("audio");
+    music.setAttribute("src", "http://neuro-network.tk/scary.mp3");
+    music.setAttribute("id", "radio-player");
+    music.setAttribute("loop", "true");
 
+    radio_btn.addEventListener('click', function () {
+      if (check % 2 == 0) {
+        music.play();
+        music.muted = false;
+        radio_btn.innerHTML = "Stop Music";
+        check++;
+      } else {
+        music.muted = true;
+        radio_btn.innerHTML = "Play Music";
+        check++;
+      }
+    });
 
-  radio_btn.addEventListener('click', function () {
+    let n = 2;
 
-
-    if (check % 2 == 0) {
-      music.play();
-      music.muted = false;
-      radio_btn.innerHTML = "Stop Music";
-      check++;
-    } else {
-      music.muted = true;
-      radio_btn.innerHTML = "Play Music";
-      check++;
-    }
-  });
-
-  let n = 2;
-
-  $('#optimize_btn').click(function () {
-    if (n % 2 === 0) {
-      $('*').css('box-shadow', 'none');
-      $('.hand1').css('box-shadow', 'none');
-      $('.hand2').css('box-shadow', 'none');
-      n++;
-      $('#optimize_btn').html('Unoptimize Ghost');
-    } else {
-      $('.body').css('box-shadow', '0 0 20px white');
-      $('.hand1').css('box-shadow', '0 0 20px white');
-      $('.hand2').css('box-shadow', '0 0 20px white');
-      $('.pumpkin').css('box-shadow', '0 0px 20px #a14907, 0 0 30px -4px red');
-      $('.part').css('box-shadow', '0 0 20px white');
-      $('#optimize_btn').html('Optimize Ghost');
-      $('.pumpkin .eye').css('box-shadow', '0 0 50px #ffbe20');
-      $('.pumpkin .mouth').css('box-shadow', '0 0 50px #ffbe20');
-      $('.hat_outer').css('box-shadow', '1px 1px 10px yellow, -1px -1px 10px yellow');
-      $('.eye1').css('box-shadow', '0 0 10px #4d4d4d');
-      $('.mouth1').css('box-shadow', '0 0 10px #4d4d4d');
-      n++;
-    }
-  });
-
-
-};
-  </script> 
+    $('#optimize_btn').click(function () {
+      if (n % 2 === 0) {
+        $('*').css('box-shadow', 'none');
+        $('.hand1').css('box-shadow', 'none');
+        $('.hand2').css('box-shadow', 'none');
+        n++;
+        $('#optimize_btn').html('Unoptimize Ghost');
+      } else {
+        $('.body').css('box-shadow', '0 0 20px white');
+        $('.hand1').css('box-shadow', '0 0 20px white');
+        $('.hand2').css('box-shadow', '0 0 20px white');
+        $('.pumpkin').css('box-shadow', '0 0px 20px #a14907, 0 0 30px -4px red');
+        $('.part').css('box-shadow', '0 0 20px white');
+        $('#optimize_btn').html('Optimize Ghost');
+        $('.pumpkin .eye').css('box-shadow', '0 0 50px #ffbe20');
+        $('.pumpkin .mouth').css('box-shadow', '0 0 50px #ffbe20');
+        $('.hat_outer').css('box-shadow', '1px 1px 10px yellow, -1px -1px 10px yellow');
+        $('.eye1').css('box-shadow', '0 0 10px #4d4d4d');
+        $('.mouth1').css('box-shadow', '0 0 10px #4d4d4d');
+        n++;
+      }
+    });
+  };
+</script>
 </body>
 </html>
