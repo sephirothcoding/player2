@@ -49,8 +49,10 @@
       background: transparent;
       border: none;
       cursor: pointer;
-      width: 50px;
-      height: 50px;
+      width: 42.5px; /* 50px - 15% */
+      height: 42.5px; /* 50px - 15% */
+      font-size: 24px; /* 50px - 15% */
+      color: #fff;
     }
 
     button.play {
@@ -75,6 +77,36 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
+      color: red;
+      font-size: 32px;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .beat-music {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: beat 1s infinite alternate;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      to {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+
+    @keyframes beat {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.2);
+      }
     }
   </style>
 </head>
@@ -87,6 +119,7 @@
         <button id="playpause" class="play" onclick="togglePlayPause()"></button>
         <input type="range" id="volume" min="0" max="1" step="0.1" value="1" oninput="setVolume()">
       </div>
+      <div class="beat-music"></div>
     </div>
     <div class="radio-info">
       <h1>Radio Player</h1>
