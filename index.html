@@ -1,161 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Radio Player</title>
-<style>
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio Player</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
 
-  .radio-container {
-    position: relative;
-    width: 320px; /* Dimensiunea containerului */
-    height: 320px; /* Dimensiunea containerului */
-    border-radius: 50%; /* Container în formă de cerc */
-    overflow: hidden; /* Ascundeți conținutul care depășește cercul */
-  }
+    .container {
+      max-width: 600px;
+    }
 
-  .radio-player {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%; /* Umpleți întreg cercul */
-    height: 100%; /* Umpleți întreg cercul */
-    background-image: url('https://xatimg.com/image/9E5rX9m6DSY8.jpg'); /* Imaginea de fundal */
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%; /* Faceți și player-ul în formă de cerc */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
+    .circle {
+      position: relative;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
 
-  .radio-player:hover {
-    /* Eliminăm translația și scalarea pentru a menține cercul la aceeași dimensiune */
-  }
+    .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-  .radio-player audio {
-    width: 100%; /* Lățime de 100% */
-    height: 80px; /* Înălțime de 80px (poți ajusta după preferință) */
-    outline: none;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+    }
 
-  .radio-info {
-    position: absolute;
-    top: 20px; /* Poziționare deasupra cercului */
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: #fff;
-    z-index: 1;
-  }
+    button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+    }
 
-  .radio-info h2 {
-    margin: 0;
-    font-size: 24px;
-  }
+    button.play {
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolygon points="5 3 19 12 5 21 5 3"%3E%3C/polygon%3E%3C/svg%3E');
+      background-size: cover;
+    }
 
-  .menu {
-    position: absolute;
-    top: calc(50% + 30px); /* Poziționare sub butoanele de volum */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    z-index: 1;
-  }
+    button.pause {
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3E%3Crect x="6" y="4" width="4" height="16" stroke="none" stroke-width="0" fill="currentColor" /%3E%3Crect x="14" y="4" width="4" height="16" stroke="none" stroke-width="0" fill="currentColor" /%3E%3C/svg%3E');
+      background-size: cover;
+    }
 
-  .menu a {
-    display: inline-block;
-    margin-right: 10px;
-    padding: 8px 16px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
+    input[type="range"] {
+      width: 100px;
+      height: 10px;
+      margin: 0 10px;
+    }
 
-  .menu a:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  .listeners {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: red;
-  }
-
-  /* Stilizare pentru butoanele de volum */
-  .volume-controls {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-  }
-
-  .volume-controls audio {
-    width: 60px; /* Lățimea player-ului de volum */
-  }
-</style>
+    .radio-info {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-
-<div class="radio-container">
-  <div class="radio-player">
-    <div class="menu">
-      <a href="#">Help</a>
-      <a href="#">Trade</a>
-      <a href="#">Facebook</a>
-      
-    </div>
-    <audio controls autoplay>
-      <source src="https://boxstream.danceradiouk.com/stream/1/" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+  <div class="container">
     <div class="radio-info">
-      <h2>Nume Radio</h2>
+      <h1>Radio Player</h1>
+      <p>Current listeners: <span id="listener-count">0</span></p>
+      <p id="current-time"></p>
     </div>
-    <div class="listeners" id="listeners">Ascultători: 0 - <span id="currentDate"></span></div>
-    <div class="volume-controls">
-      <audio controls>
-        <source src="https://boxstream.danceradiouk.com/stream/1/" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+    <div class="circle" onmouseenter="circleHover(true)" onmouseleave="circleHover(false)">
+      <img src="https://xatimg.com/image/22YlVQJsaEgC.jpg" alt="Background Image">
+      <audio id="audio" src="https://boxstream.danceradiouk.com/stream/1/" type="audio/mpeg"></audio>
+      <div class="controls">
+        <button id="playpause" class="play" onclick="togglePlayPause()"></button>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="1" oninput="setVolume()">
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  // Funcție pentru a obține data curentă sub formă de string "DD/MM/YYYY"
-  function getCurrentDate() {
-    const today = new Date();
-    const day = String(today.getDate()).padStart(2, '0');
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const year = today.getFullYear();
-    return `${day}/${month}/${year}`;
-  }
+  <script>
+    const audio = document.getElementById('audio');
+    const playpause = document.getElementById('playpause');
+    const volume = document.getElementById('volume');
+    const listenerCount = document.getElementById('listener-count');
+    const currentTime = document.getElementById('current-time');
 
-  // Actualizăm textul cu data curentă
-  document.getElementById('currentDate').innerText = getCurrentDate();
-</script>
+    let isPlaying = false;
 
+    function togglePlayPause() {
+      if (isPlaying) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
+      isPlaying = !isPlaying;
+      updatePlayPauseButton();
+    }
+
+    function updatePlayPauseButton() {
+      if (isPlaying) {
+        playpause.className = 'pause';
+      } else {
+        playpause.className = 'play';
+      }
+    }
+
+    function setVolume() {
+      audio.volume = volume.value;
+    }
+
+    function updateTime() {
+      const minutes = Math.floor(audio.currentTime / 60);
+      const seconds = Math.floor(audio.currentTime % 60);
+      currentTime.textContent = `${pad(minutes)}:${pad(seconds)}`;
+    }
+
+    function pad(number) {
+      return (number < 10) ? '0' + number : number;
+    }
+
+    // Funcția pentru a număra ascultătorii poate fi implementată folosind datele de la serverul de streaming
+
+    // Funcție pentru animația la hover
+    function circleHover(shouldScale) {
+      const circle = document.querySelector('.circle');
+      if (shouldScale) {
+        circle.style.transform = 'scale(1.1)';
+      } else {
+        circle.style.transform = 'scale(1)';
+      }
+    }
+
+    audio.addEventListener('timeupdate', updateTime);
+  </script>
 </body>
 </html>
