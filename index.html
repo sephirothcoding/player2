@@ -54,7 +54,7 @@
 
   .radio-info {
     position: absolute;
-    bottom: 20px;
+    top: 20px; /* Poziționare deasupra cercului */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -69,17 +69,17 @@
 
   .menu {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: calc(50% + 30px); /* Poziționare sub butoanele de volum */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     z-index: 1;
   }
 
   .menu a {
-    display: block;
-    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 10px;
     padding: 8px 16px;
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
@@ -98,6 +98,22 @@
     left: 50%;
     transform: translateX(-50%);
     color: red;
+  }
+
+  /* Stilizare pentru butoanele de volum */
+  .volume-controls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .volume-controls audio {
+    width: 60px; /* Lățimea player-ului de volum */
   }
 </style>
 </head>
@@ -119,6 +135,12 @@
       <h2>Nume Radio</h2>
     </div>
     <div class="listeners" id="listeners">Ascultători: 0 - <span id="currentDate"></span></div>
+    <div class="volume-controls">
+      <audio controls>
+        <source src="https://boxstream.danceradiouk.com/stream/1/" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
   </div>
 </div>
 
