@@ -15,13 +15,17 @@
     }
 
     .container {
-      max-width: 600px;
+      width: 420px; /* 600px - 30% */
+      height: 420px; /* 600px - 30% */
+      position: relative;
+      border-radius: 50%;
+      overflow: hidden;
     }
 
     .circle {
       position: relative;
-      width: 600px;
-      height: 600px;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
       overflow: hidden;
     }
@@ -66,17 +70,16 @@
     }
 
     .radio-info {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="radio-info">
-      <h1>Radio Player</h1>
-      <p>Current listeners: <span id="listener-count">0</span></p>
-      <p id="current-time"></p>
-    </div>
     <div class="circle" onmouseenter="circleHover(true)" onmouseleave="circleHover(false)">
       <img src="https://xatimg.com/image/22YlVQJsaEgC.jpg" alt="Background Image">
       <audio id="audio" src="https://boxstream.danceradiouk.com/stream/1/" type="audio/mpeg"></audio>
@@ -84,6 +87,11 @@
         <button id="playpause" class="play" onclick="togglePlayPause()"></button>
         <input type="range" id="volume" min="0" max="1" step="0.1" value="1" oninput="setVolume()">
       </div>
+    </div>
+    <div class="radio-info">
+      <h1>Radio Player</h1>
+      <p>Current listeners: <span id="listener-count">0</span></p>
+      <p id="current-time"></p>
     </div>
   </div>
 
